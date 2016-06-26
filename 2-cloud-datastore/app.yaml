@@ -16,3 +16,6 @@ runtime: ruby
 vm: true
 entrypoint: bundle exec rackup -p 8080 -E production config.ru
 # [END runtime]
+
+manual_scaling:
+  instances: 1
