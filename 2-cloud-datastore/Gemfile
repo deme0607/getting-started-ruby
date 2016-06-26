@@ -22,6 +22,10 @@ gem "jquery-rails"
 # For Windows support
 gem "tzinfo-data"
 
+group :development do
+  gem "pry"
+end
+
 group :test do
   gem "rspec-rails"
   gem "rack-test"
