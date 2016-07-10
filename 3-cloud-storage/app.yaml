@@ -14,5 +14,14 @@
 # [START runtime]
 runtime: ruby
 vm: true
-entrypoint: bundle exec rackup -p 8080 -E production config.ru
+entrypoint: GRPC_TRACE=all bundle exec unicorn -p 8080 -E production -c config/unicorn.rb
+threadsafe: true
 # [END runtime]
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: 0.5
+  memory_gb: 4
+  disk_size_gb: 10

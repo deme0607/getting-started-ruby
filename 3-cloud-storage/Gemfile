@@ -14,11 +14,12 @@
 source "https://rubygems.org"
 
 gem "rails"
-gem "gcloud"
 gem "jquery-rails"
 #[START fog]
 gem "fog"
 #[END fog]
+
+gem "unicorn"
 
 group :production do
   gem "mysql2", "~> 0.3.0"
@@ -26,6 +27,7 @@ end
 
 group :development, :test do
   gem "sqlite3"
+  gem "pry"
 end
 
 # For Windows support
@@ -35,4 +37,8 @@ group :test do
   gem "rspec-rails"
   gem "rack-test"
   gem "capybara"
+end
+
+group :lazy_load do
+  gem "gcloud"
 end
